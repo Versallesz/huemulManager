@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InformationCard } from "../../shared/components/information-card/information-card";
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faCoins, faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-main-page',
   imports: [InformationCard],
@@ -8,5 +8,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './main-page.css'
 })
 export class MainPage {
-  faHouse = faHouse
+  faHouse = faHouse;
+  faCoins = faCoins;
+  faMagnifyingGlassChart = faMagnifyingGlassChart;
 }
