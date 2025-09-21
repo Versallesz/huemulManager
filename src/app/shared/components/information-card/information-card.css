@@ -1,0 +1,21 @@
+.card-container{
+  padding: 15px 20px 15px 20px;
+  margin: 12px;
+  width: 300px;
+  height: 120px;
+
+}
+
+.card-icon{
+  font-size: 25px;
+}
+
+.card-data-title{
+  font-size: 18px;
+  color: rgb(52, 52, 52);
+}
+.card-data-data{
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(38, 38, 38);
+}
