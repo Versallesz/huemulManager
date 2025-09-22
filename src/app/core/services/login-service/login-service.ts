@@ -32,6 +32,10 @@ export class LoginService {
   logout(){
     return this.account.deleteSession({ sessionId: 'current' });
   }
+  getAccount(){
+    const result = this.account.get();
+    return result;
+  }
 
 
 }

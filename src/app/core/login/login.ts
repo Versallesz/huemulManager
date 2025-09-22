@@ -30,6 +30,7 @@ private loginService = inject(LoginService);
       const response = await this.loginService.login(email, password);
       console.log('Login successful:', response);
       await this.router.navigate(['/inicio']);
+      await this.loginService.getAccount();
     } catch(error){
       console.log(error);
     }

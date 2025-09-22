@@ -1,6 +1,7 @@
 import { Client, Account} from 'appwrite';
 
 export const client = new Client();
+export const databaseId = '68d155780015a0a75ae5';
 
 client
     .setEndpoint('https://nyc.cloud.appwrite.io/v1')

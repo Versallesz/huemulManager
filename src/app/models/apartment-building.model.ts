@@ -7,5 +7,5 @@ export interface apartmentBuilding {
   manager?: string;
   totalIncome: number;
   balance: number;
-  units: Apartment[];
+  units?: Apartment[];
 }

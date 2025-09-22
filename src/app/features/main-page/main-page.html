@@ -2,7 +2,7 @@
 <div class="flex justify-around flex-wrap">
   <app-information-card
  title="Unidades totales"
- data="123"
+ [data]="this.buildingInfo().totalUnits.toString()"
  [image]="faHouse"
  />
 <app-information-card
