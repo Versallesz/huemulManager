@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from '../services/login-service/login-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +11,27 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 })
 export class Login {
 private fb = inject(FormBuilder);
+private router = inject(Router);
+private loginService = inject(LoginService);
 
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  onSubmit(): void {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      // Here goes the server logic
+  async onSubmit() {
+    if(this.loginForm.invalid) {
+      return;
+    }
+
+    try{
+      const email = this.loginForm.value.email;
+      const password = this.loginForm.value.password;
+      const response = await this.loginService.login(email, password);
+      console.log('Login successful:', response);
+      await this.router.navigate(['/inicio']);
+    } catch(error){
+      console.log(error);
     }
   }
 }
